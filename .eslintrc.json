@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true,
@@ -7,7 +8,9 @@
   "extends": [
     "airbnb",
     "airbnb-typescript",
+    "airbnb/hooks",
     "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -18,19 +21,23 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "quotes": [
-      "error",
-      "double",
-      {
-        "allowEscape": true
-      }
-    ],
-    "@typescript-eslint/quotes": [
-      "error",
-      "double",
-      {
-        "allowEscape": true
-      }
-    ]
-  }
+    "quotes": ["error", "double"],
+    "@typescript-eslint/quotes": ["error", "double"],
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off",
+    // allow jsx syntax in js files (for next.js project)
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "ignorePatterns": [
+    "next.config.js",
+    "postcss.config.js",
+    "tailwind.config.js"
+  ]
 }

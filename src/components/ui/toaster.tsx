@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable */
 import {
   Toast,
   ToastClose,
@@ -10,7 +11,7 @@ import {
 } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 
-export function Toaster() {
+export default function Toaster() {
   const { toasts } = useToast();
 
   return (
